@@ -1,11 +1,9 @@
-from os import sep
-from numpy import where
-import pandas as pd
 import nltk
+import pandas as pd
+
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
-import sklearn
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -32,7 +30,9 @@ class Preprocessor():
         self.data_sets = dict((key, set()) for key in CATEGORIES)
 
     def process_corpus(self):
+        
         # --- Auxiliary Functions (pretty code, yay) ---
+
         def get_question_and_answer():
             question = answer = ""
 
