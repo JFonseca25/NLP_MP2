@@ -63,7 +63,7 @@ MUSIC	"The original ""Fantasia"" included a minor masterpiece, Bach's ""Toccata 
 MUSIC	(Sofia of the Clue Crew)  This type of chord is named for what your index finger forms across the strings	bar chord
 LITERATURE	"In his ""Ode on"" this Keats wrote, ""Heard melodies are sweet, but those unheard are sweeter"""	A Grecian Urn
 LITERATURE	Julia Ward Howe's visit to the Army of the Potomac in 1861 inspired this famous hymn	The Battle Hymn Of The Republic
-HISTORY "At the beginning of ""A Tale of Two Cities"", these 2 kings sit on the thrones of England & France"	George III & Louis XVI
+HISTORY	LITERATURE	"At the beginning of ""A Tale of Two Cities"", these 2 kings sit on the thrones of England & France"	George III & Louis XVI
 LITERATURE	"She described her work as ""Human nature in the Midland Countries"" & involving ""three or four families in a country village"""	Jane Austen
 HISTORY	1789: This French landmark is stormed & its governor, killed	the Bastille
 MUSIC	"The artist known as Pink now spells her professional name using one of these for the ""i"""	an exclamation point

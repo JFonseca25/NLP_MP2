@@ -1,86 +1,76 @@
-import nltk
+from _typeshed import Self
 import pandas as pd
-
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
-
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('wordnet')
-
-TRAINING_FILE = "trainWithoutDev.txt"
-"""
-    The names of the columns of the data table. Since we have some lines with
-    more than one label, we need four.
-
-    'lq' -> label or question
-    'qa' -> question or answer
-    'aeps' -> answer or epsilon (empty)
-"""
-COLUMN_NAMES = ["label", "lq", "qa", "aeps"]
-
-CATEGORIES = ["GEOGRAPHY", "MUSIC", "LITERATURE", "HISTORY", "SCIENCE"]
-
-STOPWORDS = set(stopwords.words('english'))
+from .utils import *
 
 class Preprocessor():
-    def __init__(self, training_file=TRAINING_FILE) -> None:
-        self.data_table = pd.read_csv(training_file, sep="\t", names=COLUMN_NAMES)
-        self.data_sets = dict((key, set()) for key in CATEGORIES)
+    def __init__(self):
+        self.lemmatize: bool = False
+        self.sw_removal: bool = False
+        self.lowercasing: bool = False
 
-    def process_corpus(self):
+        return self
+
+    def process_tokens(self, tokens: list[str]):
+        """
+        Returns a list of processed tokens, according to the specified options,
+        without ponctuation.
+        """
+
+        # Remove ponctuation first
+        ret = [word for word in tokens if word.isalpha()]
+
+        if self.lowercasing:
+            ret = [word.lower() for word in ret]
+        elif self.sw_removal:
+            ret = [word for word in ret if word not in stopwords.words()]
+        elif self.lemmatize:
+            wnl = WordNetLemmatizer()
+            ret = [wnl.lemmatize(word) for word in ret]
+        
+        return ret
+
+    def process_corpus(self, corpus_path):
+        """
+        Pre-processes a corpus and returns a dictionary whose keys are the
+        CATEGORIES (see utils.py) and whose values are sets of pre-processed
+        tokens.
+        """
         
         # --- Auxiliary Functions (pretty code, yay) ---
 
-        def get_question_and_answer():
-            question = answer = ""
+        def get_question_and_answer(row):
+            return row[Q_ROW], row[A_ROW]
 
-            if row["lq"] in CATEGORIES:
-                question = row["qa"]
-                answer = row["aeps"]
-            else:
-                question = row["lq"]
-                answer = row["qa"]
-
-            return question, answer
-
-        def get_where_to_add():
-            where_to_add = [row["label"]]
-            
-            if row["lq"] in CATEGORIES:
-                where_to_add += [row["lq"]]
-
-            return where_to_add
-
-        def process_tokens(tokens):
-            wnl = WordNetLemmatizer()
-
-            tokens_without_sw = [word for word in tokens if word not in stopwords.words() and word.isalpha()]
-            tokens_without_sw_lemmatized = [wnl.lemmatize(word) for word in tokens_without_sw]
-
-            return tokens_without_sw_lemmatized
-
-        def add_tokens_to_data_sets(tokens):
-            for key in where_to_add:
-                self.data_sets[key] = self.data_sets[key].union(tokens)
+        def add_tokens_to_dict(d, row, tokens):
+            label = row[LBL_ROW]
+            d[label] = d[label].union(tokens)
 
         # --- Actual function ---
 
-        for index, row in self.data_table.iterrows():
+        corpus = pd.read_csv(corpus_path, sep = "\t", names = TRAINING_ROWS)
+        dic = dict((key, set()) for key in CATEGORIES)
+
+        for index, row in corpus.iterrows():
             print(index)
 
-            where_to_add = get_where_to_add()
             question, answer = get_question_and_answer()
 
             tokens = word_tokenize(question) + word_tokenize(answer)
 
-            processed_tokens = process_tokens(tokens)
+            processed_tokens = self.process_tokens(tokens)
 
-            add_tokens_to_data_sets(processed_tokens)
+            add_tokens_to_dict(dic, row, processed_tokens)
     
-    def get_data_frame(self) -> pd.DataFrame:
-        return self.data_table
+        return dic
 
-    def get_data_sets(self) -> dict:
-        return self.data_sets
+    def sw_removal(self):
+        self.sw_removal = True
+        return self
+
+    def lowercasing(self):
+        self.lowercasing = True
+        return self
+
+    def lemmatize(self):
+        self.lemmatize = True
+        return self
