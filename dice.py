@@ -1,6 +1,7 @@
 import numpy as np
 
 from preprocessor import Preprocessor
+from sklearn.metrics import jaccard_score
 from .model import Model
 from .utils import *
 
@@ -17,10 +18,8 @@ class Dice(Model):
         return tokens
 
     def dice_score(y_true: np.array, y_pred: np.array):
-        num = 2 * len(np.intersect1d(y_true, y_pred))
-        den = len(y_true) + len(y_pred)
-        
-        return num / den
+        jaccard = jaccard_score(y_true, y_pred)
+        return 2 * jaccard / (1 + jaccard)
 
     def test_tokens(self, tokens: list[str]) -> str:
         max_dice = 0
