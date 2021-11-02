@@ -1,18 +1,35 @@
 import pandas as pd
 
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-from embeddings_model import EModel
+from l_model import LModel
 from utils import *
 
-class NaiveBayes(EModel):
-    def __init__(self, training_set: pd.DataFrame = None, wd_mat=None) -> None:
-        super().__init__(training_set=training_set, wd_mat=wd_mat)
+class NaiveBayes(LModel):
+    def __init__(self, training_set: pd.DataFrame, vectorizer = TfidfVectorizer(stop_words='english')):
+        super().__init__(training_set, vectorizer)
         self.model = MultinomialNB()
 
-    def test_row(self, row):
-        doc = ' '.join([row[Q_ROW], row[A_ROW]])
-        vectorized_doc = self.vectorize_doc(doc)
-
     def train(self):
-        wd_mat = self.get_wd_mat()
+        labels = self.training_set[LBL_COL]
+
+        corpus = []
+        for ix, row in self.training_set.iterrows():
+            to_add = ' '.join([row[Q_COL], row[A_COL]])
+            corpus.append(to_add)
+
+        X = self.vectorizer.fit_transform(corpus)
+        
+        self.model.fit(X, labels)
+
+    def test(self, test_set: pd.DataFrame):
+        tests = []
+
+        for ix, row in test_set.iterrows():
+            to_add = ' '.join([row[Q_COL], row[A_COL]])
+            tests.append(to_add)
+        
+        X = self.vectorizer.fit_transform(tests)
+
+        return self.model.predict(X)

@@ -18,16 +18,16 @@ TRAINING_FILE = "trainWithoutDev.txt"
 TESTING_FILE = "dev_clean.txt"
 
 """Label for the Label row of the training set"""
-LBL_ROW = "l"
+LBL_COL = "l"
 
 """Label for the Question Row of the training and testing set"""
-Q_ROW = "q"
+Q_COL = "q"
 
 """Label for the Answer Row of the training and testing sets"""
-A_ROW = "a"
+A_COL = "a"
 
 STOPWORDS = set(stopwords.words('english'))
 
-TRAINING_ROWS = [LBL_ROW, Q_ROW, A_ROW]
+TRAINING_COLS = [LBL_COL, Q_COL, A_COL]
 
-TESTING_ROWS = [Q_ROW, A_ROW]
+TESTING_COLS = [Q_COL, A_COL]
