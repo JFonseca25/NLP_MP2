@@ -10,6 +10,8 @@ from naive_bayes import NaiveBayes
 from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import CountVectorizer
 
+import metrics as mt
+
 def save_object(obj, filename):
 	with open(filename, 'wb') as out:
 		pickle.dump(obj, out, pickle.HIGHEST_PROTOCOL)
@@ -44,10 +46,22 @@ def main():
 
 	print("--- Testing ---")
 
-	print("Jaccard -> ", accuracy_score(true_labels, jaccard_model.test(test_ds)))
-	print("Dice -> ", accuracy_score(true_labels, dice_model.test(test_ds)))
-	print("NB CV -> ", accuracy_score(true_labels, nb_model_cv.predict(test_ds)))
-	print("NB tf-idf -> ", accuracy_score(true_labels, nb_model_tfidf.predict(test_ds)))
+	jaccard_y = jaccard_model.test(test_ds)
+	print("Jaccard testing done.")
+	#dice_y = dice_model.test(test_ds)
+	nb_cv_y = nb_model_cv.predict(test_ds)
+	#nb_tfidf_y = nb_model_tfidf.predict(test_ds)
+
+	print(mt.complete_accuracy(true_labels, jaccard_y))
+	print(mt.complete_accuracy(true_labels, nb_cv_y))
+	print("Kappa: " + str(mt.cohen_kappa(jaccard_y, nb_cv_y)))
+
+	print("Jaccard -> ", accuracy_score(true_labels, jaccard_y))
+	#print("Dice -> ", accuracy_score(true_labels, dice_y))
+	print("NB CV -> ", accuracy_score(true_labels, nb_cv_y))
+	#print("NB tf-idf -> ", accuracy_score(true_labels, nb_tfidf_y)))
+
+	#mt.result_table(true_labels, [("Jaccard", jaccard_y), ("Naive Bayes", nb_cv_y)]) WIP
 
 if __name__ == '__main__':
 	main()
