@@ -1,7 +1,7 @@
 import pandas as pd
 
 from sklearn import svm
-from .LModel import LModel
+from l_model import LModel
 
 class SVM(LModel):
     pass

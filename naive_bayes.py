@@ -23,15 +23,13 @@ class NaiveBayes(LModel):
         
         self.model.fit(X, labels)
 
-    def test(self, test_set: pd.DataFrame):
+    def predict(self, test_set: pd.DataFrame):
         tests = []
-        true_labels = []
 
         for ix, row in test_set.iterrows():
             to_add = ' '.join([row[Q_COL], row[A_COL]])
             tests.append(to_add)
-            true_labels.append(row[LBL_COL])
         
-        X = self.vectorizer.fit_transform(tests)
+        X = self.vectorizer.transform(tests)
 
-        return true_labels, self.model.predict(X)
+        return self.model.predict(X)
