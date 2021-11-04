@@ -1,4 +1,4 @@
-from numpy import array, where
+from numpy import array, where, zeros, float64
 from pandas import DataFrame, Index
 from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score
 import utils as utils
@@ -16,33 +16,27 @@ def result_table(y_true, y_pred):
 		- 
 		- y_pred: list with models' y_pred
 	"""
-	accuracy, kappas = [], []
+	accuracy, kappas = [], zeros(shape=(len(y_pred),len(y_pred)), dtype=float64)
 	
 	for model in y_pred:
-		print(model[0], complete_accuracy(y_true, model[1]))
 		accuracy += [complete_accuracy(y_true, model[1])]
+	
 	for first in range(len(y_pred)-1):
-		for second in range(first+1, len(y_pred)):
-			kappas += [cohen_kappa(y_pred[first][1], y_pred[second][1])]
+		for second in range(first + 1, len(y_pred)):
+			kappa = float64(cohen_kappa(y_pred[first][1], y_pred[second][1]))
+			kappas[first][second] = kappa
+			kappas[second][first] = kappa
+			
+	for model in range(len(y_pred)):
+		print(y_pred[model][0], " accuracy:\n", accuracy[model])
 
-	print("Accuracy:")
-	for model in y_pred:
-		print(model[0], accuracy)
+	print("Kappas:\n" + str(kappas))
 
-	print("Kappas: " + str(kappas))
+	return accuracy, kappas
 	#return DataFrame([category[1] for category in accuracy], index=Index(CATEGORIES+["GENERAL"]), columns=METRICS).T
 
 def get_category_entries(arr, category):
 	return where(arr == category)[0]
-
-def select_lines(y_true, y_pred):
-	"""Select wanted lines from both y_true and y_pred."""
-	general_y_true = array(general_y_true)
-	general_y_pred = array(general_y_pred)
-	category_true_ix = get_category_entries(general_y_true, category)
-
-	# return both 
-
 
 def category_accuracy(general_y_true, general_y_pred, category):
 	general_y_true = array(general_y_true)
