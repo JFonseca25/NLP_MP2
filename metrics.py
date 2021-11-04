@@ -16,27 +16,33 @@ def result_table(y_true, y_pred):
 		- 
 		- y_pred: list with models' y_pred
 	"""
-	accuracy, kappas = [], zeros(shape=(len(y_pred),len(y_pred)), dtype=float64)
+	num_models = len(y_pred)
+	accuracy, kappas = [], zeros(shape=(num_models,num_models), dtype=float64)
 	
 	for model in y_pred:
 		accuracy += [complete_accuracy(y_true, model[1])]
 	
-	for first in range(len(y_pred)-1):
-		for second in range(first + 1, len(y_pred)):
+	for first in range(num_models-1):
+		for second in range(first + 1, num_models):
 			kappa = float64(cohen_kappa(y_pred[first][1], y_pred[second][1]))
 			kappas[first][second] = kappa
 			kappas[second][first] = kappa
+		kappas[first][first] = 1 # every model agrees with itself
 			
-	for model in range(len(y_pred)):
-		print(y_pred[model][0], " accuracy:\n", accuracy[model])
+	for model in range(num_models):
+		print(y_pred[model][0], " Accuracy:\n", accuracy[model])
 
-	print("Kappas:\n" + str(kappas))
+	models = [model[0] for model in y_pred]
+
+	#print("Kappas:\n" + str(kappas))
+	print("Dataframe:\n", DataFrame(kappas, index=Index(models), columns=models))
 
 	return accuracy, kappas
 	#return DataFrame([category[1] for category in accuracy], index=Index(CATEGORIES+["GENERAL"]), columns=METRICS).T
 
 def get_category_entries(arr, category):
 	return where(arr == category)[0]
+
 
 def category_accuracy(general_y_true, general_y_pred, category):
 	general_y_true = array(general_y_true)
