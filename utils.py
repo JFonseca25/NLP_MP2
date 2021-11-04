@@ -1,5 +1,7 @@
 import nltk
 import pandas as pd
+import pickle
+import matplotlib.pyplot as plt
 
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -91,3 +93,21 @@ def process_corpus_to_dict(corpus_path=None, data_frame=None):
         add_tokens_to_dict(dic, row, processed_tokens)
 
     return dic
+
+def analyze_data(corpus: pd.DataFrame):
+	geography_data = corpus[corpus[LBL_COL] == "GEOGRAPHY"]
+	music_data = corpus[corpus[LBL_COL] == "MUSIC"]
+	lit_data = corpus[corpus[LBL_COL] == "LITERATURE"]
+	history_data = corpus[corpus[LBL_COL] == "HISTORY"]
+	sci_data = corpus[corpus[LBL_COL] == "SCIENCE"]
+
+	plt.bar(CATEGORIES, [geography_data.shape[0], music_data.shape[0], lit_data.shape[0], history_data.shape[0], sci_data.shape[0]])
+	plt.show()
+
+def save_object(obj, filename):
+	with open(filename, 'wb') as out:
+		pickle.dump(obj, out, pickle.HIGHEST_PROTOCOL)
+
+def load_object(filename):
+	with open(filename, 'rb') as inp:
+		return pickle.load(inp)
