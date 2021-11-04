@@ -119,7 +119,7 @@ def main():
 	print("KNN tf-idf 1 -> ", accuracy_score(true_labels, knn_tfidf_1_y))
 	print("KNN tf-idf 2 (lemmatization) -> ", accuracy_score(true_labels, knn_tfidf_2_y))
 
-	mt.result_table(true_labels, 
+	accuracy, kappas = mt.results(true_labels, 
 		[
 			("Jaccard"		, jaccard_y)	, 
 			("Dice"			, dice_y)	,
@@ -136,6 +136,22 @@ def main():
 			("KNN tf-idf "		, knn_tfidf_1_y),
 			("KNN tf-idf Lemmatized", knn_tfidf_2_y)
 		])
+	mt.result_table(accuracy, kappas, (
+					"Jaccard" 		,
+					"Dice"			,
+					"NB CV"			,
+					"NB CV Lemmatized"	,
+					"NB tf-idf"		,
+					"NB tf-idf Lemmatized"	,
+					"SVM CV"		,
+					"SVM CV Lemmatized"	,
+					"SVM tf-idf"		,
+					"SVM tf-idf Lemmatized"	,
+					"KNN CV "		,
+					"KNN CV Lemmatized"	,
+					"KNN tf-idf "		,
+					"KNN tf-idf Lemmatized"	)
+	)
 
 if __name__ == "__main__":
 	main()
