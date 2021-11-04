@@ -1,3 +1,4 @@
+from nltk.corpus.reader import util
 from numpy import array, where, zeros, float64
 from pandas import DataFrame, Index
 from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score
@@ -16,26 +17,41 @@ def result_table(y_true, y_pred):
 		- 
 		- y_pred: list with models' y_pred
 	"""
-	num_models = len(y_pred)
-	accuracy, kappas = [], zeros(shape=(num_models,num_models), dtype=float64)
+	num_models, category_size = len(y_pred), len(utils.CATEGORIES) + 1 # +1: GENERAL
+	accuracy, kappas = [], zeros(shape=(num_models,num_models), 
+								dtype=float64)
 	
+
 	for model in y_pred:
 		accuracy += [complete_accuracy(y_true, model[1])]
 	
+	accuracy = array(accuracy)
+
+	#print("Accuracy ", accuracy)
+
 	for first in range(num_models-1):
 		for second in range(first + 1, num_models):
-			kappa = float64(cohen_kappa(y_pred[first][1], y_pred[second][1]))
+			kappa = float64(cohen_kappa(y_pred[first][1], 
+							y_pred[second][1]))
 			kappas[first][second] = kappa
 			kappas[second][first] = kappa
 		kappas[first][first] = 1 # every model agrees with itself
 			
-	for model in range(num_models):
-		print(y_pred[model][0], " Accuracy:\n", accuracy[model])
+	
+	#for model in range(num_models):
+	#	print(y_pred[model][0], " Accuracy:\n", accuracy[model])
 
 	models = [model[0] for model in y_pred]
+	
+	categories = utils.CATEGORIES + ["GENERAL"]
+	print("Accuracy Dataframe:\n", DataFrame(accuracy, 
+						index=Index(models), 
+						columns=categories))
 
 	#print("Kappas:\n" + str(kappas))
-	print("Dataframe:\n", DataFrame(kappas, index=Index(models), columns=models))
+	print("Kappa Dataframe:\n", DataFrame(kappas, 
+						index=Index(models), 
+						columns=models))
 
 	return accuracy, kappas
 	#return DataFrame([category[1] for category in accuracy], index=Index(CATEGORIES+["GENERAL"]), columns=METRICS).T
@@ -50,15 +66,26 @@ def category_accuracy(general_y_true, general_y_pred, category):
 	category_true_ix = get_category_entries(general_y_true, category)
 
 	if category_true_ix.size == 0:
-		return "-" # No data in y_true.
+		return float64(1) # No data in y_true.
 	else:
-		return accuracy_score(general_y_true[category_true_ix], general_y_pred[category_true_ix])
+		return accuracy_score(general_y_true[category_true_ix], 
+					general_y_pred[category_true_ix])
 		
 def complete_accuracy(y_true, y_pred):
-	accuracies = []
-	for category in utils.CATEGORIES:
-		accuracies += [(category, category_accuracy(y_true, y_pred, category))]
-	accuracies += [("GENERAL", accuracy_score(y_true, y_pred))]
+	"""Determines accuracy for all categories + general for a given model."""
+	#accuracies = []
+	#for category in utils.CATEGORIES:
+	#	accuracies += [(category, category_accuracy(y_true, y_pred, category))]
+	#accuracies += [("GENERAL", accuracy_score(y_true, y_pred))]
+	#return accuracies
+
+	# WIP: already working for a given model
+	category_size = len(utils.CATEGORIES)
+	accuracies = zeros(category_size + 1) # +1: GENERAL
+	for category in range(category_size):
+		accuracies[category] = category_accuracy(y_true, y_pred, 
+						utils.CATEGORIES[category])
+	accuracies[category_size] = accuracy_score(y_true, y_pred)
 	return accuracies
 
 
