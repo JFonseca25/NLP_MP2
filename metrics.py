@@ -34,6 +34,7 @@ def results(y_true, y_pred):
 			kappas[first][second] = kappa
 			kappas[second][first] = kappa
 		kappas[first][first] = 1 # every model agrees with itself
+	kappas[num_models-1][num_models-1] = 1 # for doesn't reach this value
 				
 	return accuracy, kappas
 
