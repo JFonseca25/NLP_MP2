@@ -7,9 +7,9 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('wordnet')
+nltk.download('stopwords', quiet=True)
+nltk.download('punkt', quiet=True)
+nltk.download('wordnet', quiet=True)
 
 """Categories in the training corpus"""
 CATEGORIES = ["GEOGRAPHY", "MUSIC", "LITERATURE", "HISTORY", "SCIENCE"]
