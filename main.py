@@ -1,169 +1,163 @@
-import os
-
+from operator import index
+from matplotlib.pyplot import xlim
+from nltk.corpus.reader import aligned
+from numpy.core.numeric import cross
 from sklearn import svm
-from lr import LR
-import metrics as mt
-import numpy as np
 import pandas as pd
+import numpy as np
 
 from knn import KNN
-from perceptron import PerceptronClassifier
-from rfc import RForest
-from sgd import SGD
-from svm import SVM
+from sklearn import svm
 from utils import *
-from dice import Dice
-from jaccard import Jaccard
-from naive_bayes import NaiveBayes
 from lemma_tokenizer import LemmaTokenizer
 from sklearn.metrics import classification_report, accuracy_score
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.model_selection import cross_validate
 
-def results_graph(results: list, model_names: list):
-	plt.bar(model_names, results)
+def get_corpus(training_set):
+        corpus = []
+        for ix, row in training_set.iterrows():
+            string = ' '.join([row[Q_COL], row[A_COL]])
+            corpus.append(string)
+        return corpus
+
+def tokenizer(s):
+	ret = [t.lower() for t in word_tokenize(s) if t.isalpha()]
+	ret = [WordNetLemmatizer().lemmatize(t) for t in ret]
+	return ret
+
+def print_cross_val_results(score):
+	print("\n-- Results --")
+	print("- Avg. balanced accuracy:", score["test_balanced_accuracy"].mean())
+	print("- Std. Dev. of balanced accuracy:", score["test_balanced_accuracy"].std())
+
+	print("- Avg. f1_weighted:", score["test_f1_weighted"].mean())
+	print("- Std. Dev. of f1_weighted:", score["test_f1_weighted"].std(), '\n')
+
+def plot_cross_val_results(title, labels, mean, stddev):	
+	df = pd.DataFrame(np.c_[mean, stddev], index=labels)
+
+	df.plot(kind='bar')
+	plt.grid(b=True, which='both', axis='y', linestyle='-', linewidth=0.5)
+	plt.legend(["Average", "Std. Deviation"])
+	plt.hlines(max(mean), linestyles='dashed', xmin=-0.25, xmax=2, colors='grey')
+	plt.hlines(min(stddev), linestyles='dashed', xmin=0, xmax=2.25, colors='grey')
+	plt.xticks(rotation='horizontal')
+	plt.title(title)
 	plt.show()
 
+def clear_result_lists(l1, l2, l3, l4):
+	l1.clear()
+	l2.clear()
+	l3.clear()
+	l4.clear()
+
+def append_results(mean_acc, std_acc, mean_f1, std_f1, score):
+	mean_acc.append(score['test_balanced_accuracy'].mean())
+	std_acc.append(score['test_balanced_accuracy'].std())
+
+	mean_f1.append(score['test_f1_weighted'].mean())
+	std_f1.append(score['test_f1_weighted'].std())
+
+def cross_val_model(model, vectorizer, folds=20):
+	whole_corpus = pd.read_table("whole_corpus.txt", sep="\t", names=COLS, converters={Q_COL: str, A_COL: str})
+
+	X = get_corpus(whole_corpus)
+	y = whole_corpus[LBL_COL]
+
+	X = vectorizer.fit_transform(X)
+
+	scoring = ['balanced_accuracy', 'f1_weighted']
+
+	print("-- Beginning cross val. with {} folds --".format(folds))
+
+	return cross_validate(model, X, y, scoring=scoring, cv=folds)
+
 def main():
-	corpus = pd.read_table(TRAINING_FILE, sep="\t", names=COLS, converters={Q_COL: str, A_COL: str})
-	test_ds = pd.read_table(TESTING_FILE, sep="\t", names=TEST_COLS, converters={Q_COL: str, A_COL: str})
+	mean_acc = []
+	std_acc = []
+	mean_f1 = []
+	std_f1 = []
 
-	if not os.path.isfile(CORPUS_DICT):
-		print("--- Processing corpus for BoW Models ---")
-		bow = process_corpus_to_dict(data_frame=corpus)
-		save_object(bow, CORPUS_DICT)
-	else:
-		bow = load_object(CORPUS_DICT)
+	labels = ["lc", "lc + sw_rem", "lc + sw_rem + lemm"]
 
-	true_labels = test_ds[LBL_COL].to_list()
+	print("---- LSVM ----\n")
+	print("--- Cross Val. of LSVM CV with lowercasing -- ")
+	score = cross_val_model(svm.LinearSVC(), CountVectorizer())
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
+	print("--- Cross Val. of LSVM CV with lowercasing and sw_removal -- ")
+	score = cross_val_model(svm.LinearSVC(), CountVectorizer(stop_words='english'))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	#jaccard_model = Jaccard(bow)
-	#dice_model = Dice(bow)
-	nb_model_cv_1 = NaiveBayes(corpus, vectorizer=CountVectorizer())
-	nb_model_cv_2 = NaiveBayes(corpus, vectorizer=CountVectorizer(stop_words='english'))
-	nb_model_cv_3 = NaiveBayes(corpus, vectorizer=CountVectorizer(tokenizer=LemmaTokenizer()))
-	
-	nb_model_tfidf_1 = NaiveBayes(corpus, vectorizer=TfidfVectorizer())
-	nb_model_tfidf_2 = NaiveBayes(corpus)
-	nb_model_tfidf_3 = NaiveBayes(corpus, vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
+	print("--- Cross Val. of LSVM CV with lemmatization, sw_removal removal, lowercasing --")
+	score = cross_val_model(svm.LinearSVC(), CountVectorizer(tokenizer=tokenizer))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	svm_model_tfidf_1 = SVM(corpus, vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
-	svm_model_tfidf_2 = SVM(corpus, model=svm.LinearSVC(), vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
-	svm_model_tfidf_3 = SVM(corpus, model=svm.SVC(decision_function_shape='ovo'), vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
+	plot_cross_val_results("Weighted Accuracy Mean / Std. Dev for LSVM with CountVectorizer", labels, mean_acc, std_acc)
+	plot_cross_val_results("Weighted F1-Measure Mean / Std. Dev for LSVM with CountVectorizer", labels, mean_f1, std_f1)
+	clear_result_lists(mean_acc, std_acc, mean_f1, std_f1)
 
-	knn_model_tfidf_1 = KNN(corpus, vectorizer=TfidfVectorizer())
-	knn_model_tfidf_2 = KNN(corpus)
-	knn_model_tfidf_3 = KNN(corpus, vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
+	print("--- Cross Val. of LSVM tf-idf with lowercasing -- ")
+	score = cross_val_model(svm.LinearSVC(), TfidfVectorizer())
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	sgd_model = SGD(corpus, vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
+	print("--- Cross Val. of LSVM tf-idf with lowercasing and sw_removal -- ")
+	score = cross_val_model(svm.LinearSVC(), TfidfVectorizer(stop_words='english'))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	lr_model = LR(corpus, vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
+	print("--- Cross Val. of LSVM tf-idf with lemmatization, sw_removal removal, lowercasing --")
+	score = cross_val_model(svm.LinearSVC(), TfidfVectorizer(tokenizer=tokenizer))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	perc_model = PerceptronClassifier(corpus, vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
+	plot_cross_val_results("Weighted Accuracy Mean / Std. Dev for LSVM with TfidfVectorizer", labels, mean_acc, std_acc)
+	plot_cross_val_results("Weighted F1-Measure Mean / Std. Dev for LSVM with TfidfVectorizer", labels, mean_f1, std_f1)
+	clear_result_lists(mean_acc, std_acc, mean_f1, std_f1)
 
-	rf_model = RForest(corpus, vectorizer=TfidfVectorizer(tokenizer=LemmaTokenizer()))
+	print("---- NB ----\n")
 
-	print("--- Currently training learning models ---")
-	nb_model_cv_1.train()
-	nb_model_cv_2.train()
-	nb_model_cv_3.train()
-	print("Naive Bayes with CountVectorizer done!")
-	nb_model_tfidf_1.train()
-	nb_model_tfidf_2.train()
-	nb_model_tfidf_3.train()
-	print("Naive Bayes with tf-idf done!")
-	knn_model_tfidf_1.train()
-	knn_model_tfidf_2.train()
-	knn_model_tfidf_3.train()
-	print("KNN with tf-idf done!")
-	sgd_model.train()
-	print("SGD with tf-idf done!")
-	lr_model.train()
-	print("LR with tf-idf done!")
-	perc_model.train()
-	print("Perceptron with tf-idf done!")
-	rf_model.train()
-	print("Random Forest with tf-idf done!")
-	svm_model_tfidf_1.train()
-	svm_model_tfidf_2.train()
-	svm_model_tfidf_3.train()
-	print("SVM with tf-idf done!")
+	print("--- Cross Val. of NB CV with lowercasing --")
+	score = cross_val_model(MultinomialNB(), CountVectorizer())
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	print("--- Testing ---")
+	print("--- Cross Val. of NB CV with lowercasing and sw_removal --")
+	score = cross_val_model(MultinomialNB(), CountVectorizer(stop_words='english'))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	#jaccard_y = jaccard_model.test(test_ds)
-	#print("Jaccard testing done.")
-	
-	nb_cv_1_y = nb_model_cv_1.predict(test_ds)
-	nb_cv_2_y = nb_model_cv_2.predict(test_ds)
-	nb_cv_3_y = nb_model_cv_3.predict(test_ds)
+	print("--- Cross Val. of NB CV with lemmatization, sw_removal removal, lowercasing --")
+	score = cross_val_model(MultinomialNB(), CountVectorizer(tokenizer=tokenizer))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	nb_tfidf_1_y = nb_model_tfidf_1.predict(test_ds)
-	nb_tfidf_2_y = nb_model_tfidf_2.predict(test_ds)
-	nb_tfidf_3_y = nb_model_tfidf_3.predict(test_ds)
+	plot_cross_val_results("Weighted Accuracy Mean / Std. Dev for NB with CountVectorizer", labels, mean_acc, std_acc)
+	plot_cross_val_results("Weighted F1-Measure Mean / Std. Dev for NB with CountVectorizer", labels, mean_f1, std_f1)
+	clear_result_lists(mean_acc, std_acc, mean_f1, std_f1)
 
-	knn_tfidf_1_y = knn_model_tfidf_1.predict(test_ds)
-	knn_tfidf_2_y = knn_model_tfidf_2.predict(test_ds)
-	knn_tfidf_3_y = knn_model_tfidf_3.predict(test_ds)
+	print("--- Cross Val. of NB tf-idf with lowercasing --")
+	score = cross_val_model(MultinomialNB(), TfidfVectorizer())
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	sgd_model_y = sgd_model.predict(test_ds)
+	print("--- Cross Val. of NB tf-idf with lowercasing and sw_removal --")
+	score = cross_val_model(MultinomialNB(), TfidfVectorizer(stop_words='english'))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	lr_model_y = lr_model.predict(test_ds)
+	print("--- Cross Val. of NB tf-idf with lemmatization, sw_removal removal, lowercasing --")
+	score = cross_val_model(MultinomialNB(), TfidfVectorizer(tokenizer=tokenizer))
+	print_cross_val_results(score)
+	append_results(mean_acc, std_acc, mean_f1, std_f1, score)
 
-	perc_y = perc_model.predict(test_ds)
-
-	rforest_y = rf_model.predict(test_ds)
-
-	svm_tfidf_1_y = svm_model_tfidf_1.predict(test_ds)
-	svm_tfidf_2_y = svm_model_tfidf_2.predict(test_ds)
-	svm_tfidf_3_y = svm_model_tfidf_3.predict(test_ds)
-
-	#print("Jaccard -> ", accuracy_score(true_labels, jaccard_y))
-	#print("Dice -> ", accuracy_score(true_labels, dice_y))
-	print("- NB CV 1 -\n", classification_report(true_labels, nb_cv_1_y))
-	print("- NB CV 2 -\n", classification_report(true_labels, nb_cv_2_y))
-	print("- NB CV 3 -\n", classification_report(true_labels, nb_cv_3_y))
-
-	print("- NB tf-idf 1 -\n", classification_report(true_labels, nb_tfidf_1_y))
-	print("- NB tf-idf 2 -\n", classification_report(true_labels, nb_tfidf_2_y))
-	print("- NB tf-idf 3 -\n", classification_report(true_labels, nb_tfidf_3_y))
-
-	print("- KNN tf-idf 1 -\n", classification_report(true_labels, knn_tfidf_1_y))
-	print("- KNN tf-idf 2 -\n", classification_report(true_labels, knn_tfidf_2_y))
-	print("- KNN tf-idf 3 -\n", classification_report(true_labels, knn_tfidf_3_y))
-
-	print("- SGD tf-idf -\n", classification_report(true_labels, sgd_model_y))
-
-	print(" - LR tf-idf -\n", classification_report(true_labels, lr_model_y))
-	
-	print(" - Perceptron tf-idf -\n", classification_report(true_labels, perc_y))
-
-	print(" - Random Forest tf-idf -\n", classification_report(true_labels, rforest_y))
-
-	print(" - Random Forest tf-idf -\n", classification_report(true_labels, rforest_y))
-	print(" - Random Forest tf-idf -\n", classification_report(true_labels, rforest_y))
-	print(" - Random Forest tf-idf -\n", classification_report(true_labels, rforest_y))
-
-	print("- SVM tf-idf 1 -\n", classification_report(true_labels, svm_tfidf_1_y))
-	print("- SVM (linear) tf-idf 2 -\n", classification_report(true_labels, svm_tfidf_2_y))
-	print("- SVM (ovo) tf-idf 3 -\n", classification_report(true_labels, svm_tfidf_3_y))
-
-	results = [accuracy_score(true_labels, i) for i in [nb_cv_1_y, nb_cv_2_y,
-				nb_cv_3_y, nb_tfidf_1_y, nb_tfidf_2_y, nb_tfidf_3_y, 
-					knn_tfidf_1_y, knn_tfidf_2_y, knn_tfidf_3_y, sgd_model_y, 
-						lr_model_y, perc_y, rforest_y, svm_tfidf_1_y, svm_tfidf_2_y,
-							svm_tfidf_3_y]]
-	
-	print("--- MAX ACCURACY: {} ---".format(max(results)))
-
-	model_names = ["NB CV 1", "NB CV 2", "NB CV 3", "NB tf-idf 1", "NB tf-idf 2",
-					"NB tf-idf 3", "KNN tf-idf 1", "KNN tf-idf 2", "KNN tf-idf 3",
-						"SGD tf-idf", "LR tf-idf", "Perceptron tf-idf", "RF tf-idf",
-							"SVM tf-idf 1", "SVM (linear) tf-idf 2", "SVM (ovo) tf-idf 3"]
-
-	results_graph(np.array(results), np.array(model_names))
-
-
-	#mt.result_table(true_labels, [("Jaccard", jaccard_y), ("Naive Bayes", nb_cv_y)]) WIP
+	plot_cross_val_results("Weighted Accuracy Mean / Std. Dev for NB with TfidfVectorizer", labels, mean_acc, std_acc)
+	plot_cross_val_results("Weighted F1-Measure Mean / Std. Dev for NB with TfidfVectorizer", labels, mean_f1, std_f1)
 
 if __name__ == "__main__":
 	main()

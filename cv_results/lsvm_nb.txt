@@ -1,0 +1,112 @@
+---- LSVM ----
+
+--- Cross Val. of LSVM CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8325870868788285
+- Std. Dev. of balanced accuracy: 0.01785767169749205
+- Avg. f1_weighted: 0.8348340258855869
+- Std. Dev. of f1_weighted: 0.017247730935528477 
+
+--- Cross Val. of LSVM CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8210848137807412
+- Std. Dev. of balanced accuracy: 0.01823695586902965
+- Avg. f1_weighted: 0.8243389761187794
+- Std. Dev. of f1_weighted: 0.019041393416074068 
+
+--- Cross Val. of LSVM CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8280459295055429
+- Std. Dev. of balanced accuracy: 0.021641012430547075
+- Avg. f1_weighted: 0.8319287599936567
+- Std. Dev. of f1_weighted: 0.019187266726954363 
+
+--- Cross Val. of LSVM tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8495629004037673
+- Std. Dev. of balanced accuracy: 0.018051417682728197
+- Avg. f1_weighted: 0.8560955060802156
+- Std. Dev. of f1_weighted: 0.01610674930973934 
+
+--- Cross Val. of LSVM tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8373408409753665
+- Std. Dev. of balanced accuracy: 0.01720967528219033
+- Avg. f1_weighted: 0.8450856481730904
+- Std. Dev. of f1_weighted: 0.015668196311948025 
+
+--- Cross Val. of LSVM tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8457150692963815
+- Std. Dev. of balanced accuracy: 0.018624892041238232
+- Avg. f1_weighted: 0.8523575563755728
+- Std. Dev. of f1_weighted: 0.01596151281843459 
+
+---- NB ----
+
+--- Cross Val. of NB CV with lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8358735387062977
+- Std. Dev. of balanced accuracy: 0.017400516782748256
+- Avg. f1_weighted: 0.8498269096355395
+- Std. Dev. of f1_weighted: 0.01561311416701973 
+
+--- Cross Val. of NB CV with lowercasing and sw_removal --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8415424190864405
+- Std. Dev. of balanced accuracy: 0.015078006523736342
+- Avg. f1_weighted: 0.8491892983949523
+- Std. Dev. of f1_weighted: 0.013171976761854639 
+
+--- Cross Val. of NB CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8321725813991246
+- Std. Dev. of balanced accuracy: 0.02032303747520047
+- Avg. f1_weighted: 0.8467268629781989
+- Std. Dev. of f1_weighted: 0.016910111239017766 
+
+--- Cross Val. of NB tf-idf with lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7485493660664775
+- Std. Dev. of balanced accuracy: 0.021692952065185008
+- Avg. f1_weighted: 0.7969508286918707
+- Std. Dev. of f1_weighted: 0.018647995110390576 
+
+--- Cross Val. of NB tf-idf with lowercasing and sw_removal --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7705941256730892
+- Std. Dev. of balanced accuracy: 0.018354126046555817
+- Avg. f1_weighted: 0.8110850811520572
+- Std. Dev. of f1_weighted: 0.01602338366090679 
+
+--- Cross Val. of NB tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.752957995620441
+- Std. Dev. of balanced accuracy: 0.01932974275481578
+- Avg. f1_weighted: 0.8005354342583976
+- Std. Dev. of f1_weighted: 0.0172307240752048 
+
