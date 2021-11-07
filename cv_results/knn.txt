@@ -1,0 +1,1651 @@
+--- KNN ---
+-- n_neighbours = 1 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4593204059321593
+- Std. Dev. of balanced accuracy: 0.02346716644055884
+- Avg. f1_weighted: 0.43610363210792435
+- Std. Dev. of f1_weighted: 0.02242487824148214 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.5147061503990746
+- Std. Dev. of balanced accuracy: 0.021077200771709145
+- Avg. f1_weighted: 0.4796457971892642
+- Std. Dev. of f1_weighted: 0.019166383724172606 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.45345786294060597
+- Std. Dev. of balanced accuracy: 0.025516891541989897
+- Avg. f1_weighted: 0.44930437725452527
+- Std. Dev. of f1_weighted: 0.024193281033366987 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7474030466299535
+- Std. Dev. of balanced accuracy: 0.021718866842739104
+- Avg. f1_weighted: 0.7497785673813866
+- Std. Dev. of f1_weighted: 0.021092900735369065 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7418223020084013
+- Std. Dev. of balanced accuracy: 0.025054157281352966
+- Avg. f1_weighted: 0.7430071318430755
+- Std. Dev. of f1_weighted: 0.02261824195531545 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7479781450011925
+- Std. Dev. of balanced accuracy: 0.02482585509905188
+- Avg. f1_weighted: 0.7523507597102742
+- Std. Dev. of f1_weighted: 0.02280273626156195 
+
+-- n_neighbours = 2 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.46675173586672375
+- Std. Dev. of balanced accuracy: 0.022995730763046656
+- Avg. f1_weighted: 0.44150100737160686
+- Std. Dev. of f1_weighted: 0.023253166237529363 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4857795500702557
+- Std. Dev. of balanced accuracy: 0.023813796703380376
+- Avg. f1_weighted: 0.47195606361803205
+- Std. Dev. of f1_weighted: 0.021618707667823183 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4638786125342679
+- Std. Dev. of balanced accuracy: 0.02205281197007174
+- Avg. f1_weighted: 0.45962999434903373
+- Std. Dev. of f1_weighted: 0.021778125912430134 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7474030466299535
+- Std. Dev. of balanced accuracy: 0.021718866842739104
+- Avg. f1_weighted: 0.7497785673813866
+- Std. Dev. of f1_weighted: 0.021092900735369065 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7418223020084013
+- Std. Dev. of balanced accuracy: 0.025054157281352966
+- Avg. f1_weighted: 0.7430071318430755
+- Std. Dev. of f1_weighted: 0.02261824195531545 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.747890425702947
+- Std. Dev. of balanced accuracy: 0.02476416916064189
+- Avg. f1_weighted: 0.7522572880643544
+- Std. Dev. of f1_weighted: 0.022700869127094285 
+
+-- n_neighbours = 3 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.42011554977893023
+- Std. Dev. of balanced accuracy: 0.019330441354274714
+- Avg. f1_weighted: 0.3829561522077538
+- Std. Dev. of f1_weighted: 0.02504861576726549 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4816295223695707
+- Std. Dev. of balanced accuracy: 0.029473890009911602
+- Avg. f1_weighted: 0.46387506863755573
+- Std. Dev. of f1_weighted: 0.030652933492504485 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4308304325714836
+- Std. Dev. of balanced accuracy: 0.0217780749768123
+- Avg. f1_weighted: 0.4181996065898697
+- Std. Dev. of f1_weighted: 0.023385983045882918 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7752408854910395
+- Std. Dev. of balanced accuracy: 0.020167935579257258
+- Avg. f1_weighted: 0.7755179197813513
+- Std. Dev. of f1_weighted: 0.01895497948630929 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7693396823703276
+- Std. Dev. of balanced accuracy: 0.019669490598161497
+- Avg. f1_weighted: 0.768276275659137
+- Std. Dev. of f1_weighted: 0.01990707654784003 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7732360322473127
+- Std. Dev. of balanced accuracy: 0.02521634145734346
+- Avg. f1_weighted: 0.7768120425254462
+- Std. Dev. of f1_weighted: 0.023541486004326113 
+
+-- n_neighbours = 4 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4141427090757218
+- Std. Dev. of balanced accuracy: 0.016085115905214036
+- Avg. f1_weighted: 0.37723933690794215
+- Std. Dev. of f1_weighted: 0.018076072337180116 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4078285824372324
+- Std. Dev. of balanced accuracy: 0.022209506276741283
+- Avg. f1_weighted: 0.37068089917683333
+- Std. Dev. of f1_weighted: 0.023027130198362333 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.4254507826719687
+- Std. Dev. of balanced accuracy: 0.022934268650368423
+- Avg. f1_weighted: 0.41391081006059316
+- Std. Dev. of f1_weighted: 0.023760240604260886 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7847929089945662
+- Std. Dev. of balanced accuracy: 0.021715276997509494
+- Avg. f1_weighted: 0.7849367893814998
+- Std. Dev. of f1_weighted: 0.02096816188094515 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7759387282889252
+- Std. Dev. of balanced accuracy: 0.022505864787183437
+- Avg. f1_weighted: 0.775642160182022
+- Std. Dev. of f1_weighted: 0.021457100816884705 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7868039091544488
+- Std. Dev. of balanced accuracy: 0.024280959590022647
+- Avg. f1_weighted: 0.7896260556481379
+- Std. Dev. of f1_weighted: 0.02245534548538849 
+
+-- n_neighbours = 5 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3935861593703996
+- Std. Dev. of balanced accuracy: 0.01788545220057759
+- Avg. f1_weighted: 0.3486380688069415
+- Std. Dev. of f1_weighted: 0.021922051771625938 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3707866174751303
+- Std. Dev. of balanced accuracy: 0.02043613086046673
+- Avg. f1_weighted: 0.32411428146991395
+- Std. Dev. of f1_weighted: 0.020200162549691553 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.41121718282816594
+- Std. Dev. of balanced accuracy: 0.02219704334294866
+- Avg. f1_weighted: 0.39649443587414324
+- Std. Dev. of f1_weighted: 0.026844484240939596 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7889511513062077
+- Std. Dev. of balanced accuracy: 0.019144578301853097
+- Avg. f1_weighted: 0.7900070543273263
+- Std. Dev. of f1_weighted: 0.019520400141255577 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7803788146871982
+- Std. Dev. of balanced accuracy: 0.020738525497061334
+- Avg. f1_weighted: 0.77965645399463
+- Std. Dev. of f1_weighted: 0.019133022537189986 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7901443040445064
+- Std. Dev. of balanced accuracy: 0.022646514853694795
+- Avg. f1_weighted: 0.7927881346301272
+- Std. Dev. of f1_weighted: 0.019918962580947913 
+
+-- n_neighbours = 6 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.38813594829399517
+- Std. Dev. of balanced accuracy: 0.023513939367309993
+- Avg. f1_weighted: 0.342077582608424
+- Std. Dev. of f1_weighted: 0.027374150608846907 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.35082597799856413
+- Std. Dev. of balanced accuracy: 0.021542396285720286
+- Avg. f1_weighted: 0.29704354279908785
+- Std. Dev. of f1_weighted: 0.023512303762153228 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.40576586493130246
+- Std. Dev. of balanced accuracy: 0.02379298951015452
+- Avg. f1_weighted: 0.3899476290178684
+- Std. Dev. of f1_weighted: 0.027982186964456767 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7946326128029015
+- Std. Dev. of balanced accuracy: 0.023125707657760692
+- Avg. f1_weighted: 0.7951278814727363
+- Std. Dev. of f1_weighted: 0.021309378416603207 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7859263978661777
+- Std. Dev. of balanced accuracy: 0.01787431184397233
+- Avg. f1_weighted: 0.7852099800221579
+- Std. Dev. of f1_weighted: 0.015598724661484402 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7939445615768363
+- Std. Dev. of balanced accuracy: 0.02184713798505524
+- Avg. f1_weighted: 0.7980478785612664
+- Std. Dev. of f1_weighted: 0.01915904817662299 
+
+-- n_neighbours = 7 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.37434629375986056
+- Std. Dev. of balanced accuracy: 0.022433539541806227
+- Avg. f1_weighted: 0.32328062674712377
+- Std. Dev. of f1_weighted: 0.023755680083837886 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33048201060194404
+- Std. Dev. of balanced accuracy: 0.019908246837165543
+- Avg. f1_weighted: 0.26863760772523837
+- Std. Dev. of f1_weighted: 0.021890777157932657 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3938649829494643
+- Std. Dev. of balanced accuracy: 0.024750197525766234
+- Avg. f1_weighted: 0.3757810339517946
+- Std. Dev. of f1_weighted: 0.02854363766577749 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.797773656457495
+- Std. Dev. of balanced accuracy: 0.023265003259811807
+- Avg. f1_weighted: 0.7983311770932899
+- Std. Dev. of f1_weighted: 0.022104171309353035 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7883187335153377
+- Std. Dev. of balanced accuracy: 0.01721726661372797
+- Avg. f1_weighted: 0.788295407038071
+- Std. Dev. of f1_weighted: 0.015073947726933294 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.793003802196035
+- Std. Dev. of balanced accuracy: 0.021458956916968603
+- Avg. f1_weighted: 0.7962244766376346
+- Std. Dev. of f1_weighted: 0.01839258310931841 
+
+-- n_neighbours = 8 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3691725263057718
+- Std. Dev. of balanced accuracy: 0.022676050008792636
+- Avg. f1_weighted: 0.31544431639387926
+- Std. Dev. of f1_weighted: 0.0227166849201552 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.315025459476182
+- Std. Dev. of balanced accuracy: 0.017839429791375323
+- Avg. f1_weighted: 0.2474848645142928
+- Std. Dev. of f1_weighted: 0.019810336145316815 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.39143834645893016
+- Std. Dev. of balanced accuracy: 0.019485532049751425
+- Avg. f1_weighted: 0.37243849904471793
+- Std. Dev. of f1_weighted: 0.02320199330319931 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8016263810008482
+- Std. Dev. of balanced accuracy: 0.022879579462582185
+- Avg. f1_weighted: 0.8024486357350853
+- Std. Dev. of f1_weighted: 0.022188574620450405 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7908511432000844
+- Std. Dev. of balanced accuracy: 0.019461585215001367
+- Avg. f1_weighted: 0.7906930415083675
+- Std. Dev. of f1_weighted: 0.017130111841793905 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7939421441973418
+- Std. Dev. of balanced accuracy: 0.02115593408263782
+- Avg. f1_weighted: 0.7977075248278245
+- Std. Dev. of f1_weighted: 0.018765693530811735 
+
+-- n_neighbours = 9 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3581766940235219
+- Std. Dev. of balanced accuracy: 0.02063402165956016
+- Avg. f1_weighted: 0.3026670255621627
+- Std. Dev. of f1_weighted: 0.022367881549443257 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3016517767641571
+- Std. Dev. of balanced accuracy: 0.018362576177645435
+- Avg. f1_weighted: 0.22804930970706144
+- Std. Dev. of f1_weighted: 0.022344389192909257 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.381436879759037
+- Std. Dev. of balanced accuracy: 0.02124578120687795
+- Avg. f1_weighted: 0.3618263439328733
+- Std. Dev. of f1_weighted: 0.025900367273605313 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8050410975334051
+- Std. Dev. of balanced accuracy: 0.021854019192238568
+- Avg. f1_weighted: 0.8059821097567881
+- Std. Dev. of f1_weighted: 0.020781603074603493 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7955732469494124
+- Std. Dev. of balanced accuracy: 0.019747017877040633
+- Avg. f1_weighted: 0.796171419933486
+- Std. Dev. of f1_weighted: 0.019129899625450086 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7957685053063577
+- Std. Dev. of balanced accuracy: 0.023188470490345302
+- Avg. f1_weighted: 0.7996777976136137
+- Std. Dev. of f1_weighted: 0.02022355426267856 
+
+-- n_neighbours = 10 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.35721822506560896
+- Std. Dev. of balanced accuracy: 0.022833418306474514
+- Avg. f1_weighted: 0.3000827501213686
+- Std. Dev. of f1_weighted: 0.026748804084407576 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.29314554393820663
+- Std. Dev. of balanced accuracy: 0.017605402266994204
+- Avg. f1_weighted: 0.21481325776757493
+- Std. Dev. of f1_weighted: 0.020145580004321338 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.38036551760819437
+- Std. Dev. of balanced accuracy: 0.01985644557837485
+- Avg. f1_weighted: 0.3615405917167445
+- Std. Dev. of f1_weighted: 0.023894220805988443 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8059336291086892
+- Std. Dev. of balanced accuracy: 0.0233216519409743
+- Avg. f1_weighted: 0.806604305561937
+- Std. Dev. of f1_weighted: 0.022358515060498053 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7966783822430613
+- Std. Dev. of balanced accuracy: 0.020124792224354787
+- Avg. f1_weighted: 0.7959173188192068
+- Std. Dev. of f1_weighted: 0.019443137917985413 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7987526368150157
+- Std. Dev. of balanced accuracy: 0.02116550059078924
+- Avg. f1_weighted: 0.8026387778552051
+- Std. Dev. of f1_weighted: 0.01942192550913096 
+
+-- n_neighbours = 11 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3525080956017302
+- Std. Dev. of balanced accuracy: 0.02124959894844416
+- Avg. f1_weighted: 0.29250810327075183
+- Std. Dev. of f1_weighted: 0.021498939509468892 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.28284169814962257
+- Std. Dev. of balanced accuracy: 0.01739176080510999
+- Avg. f1_weighted: 0.19992086279142368
+- Std. Dev. of f1_weighted: 0.019984533003271066 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.37264890567575254
+- Std. Dev. of balanced accuracy: 0.015687858971924814
+- Avg. f1_weighted: 0.3525267327193955
+- Std. Dev. of f1_weighted: 0.02022750411814726 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8079974768393623
+- Std. Dev. of balanced accuracy: 0.021843070961016363
+- Avg. f1_weighted: 0.8090340166646218
+- Std. Dev. of f1_weighted: 0.021457345952138964 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7942052952204227
+- Std. Dev. of balanced accuracy: 0.021080291959776926
+- Avg. f1_weighted: 0.794683179489591
+- Std. Dev. of f1_weighted: 0.019873222823606863 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8001456093342991
+- Std. Dev. of balanced accuracy: 0.022847520201058527
+- Avg. f1_weighted: 0.8041137204274753
+- Std. Dev. of f1_weighted: 0.020437518622247523 
+
+-- n_neighbours = 12 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.34732067796991567
+- Std. Dev. of balanced accuracy: 0.019585552047326402
+- Avg. f1_weighted: 0.28771180455211304
+- Std. Dev. of f1_weighted: 0.019700866518090276 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.27584680820989116
+- Std. Dev. of balanced accuracy: 0.017313199173247796
+- Avg. f1_weighted: 0.19003135465455698
+- Std. Dev. of f1_weighted: 0.019303848920453687 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.37074886639918847
+- Std. Dev. of balanced accuracy: 0.016476293306169044
+- Avg. f1_weighted: 0.34865496317358624
+- Std. Dev. of f1_weighted: 0.020301692582472348 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8063839206302484
+- Std. Dev. of balanced accuracy: 0.022286826845458015
+- Avg. f1_weighted: 0.8080844586233125
+- Std. Dev. of f1_weighted: 0.022669750840519285 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7946915318032677
+- Std. Dev. of balanced accuracy: 0.020456581472339884
+- Avg. f1_weighted: 0.7958243610795529
+- Std. Dev. of f1_weighted: 0.018952953750386584 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.801357973551724
+- Std. Dev. of balanced accuracy: 0.02033020368842931
+- Avg. f1_weighted: 0.8049936143609173
+- Std. Dev. of f1_weighted: 0.01794176030173487 
+
+-- n_neighbours = 13 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.34433044152768577
+- Std. Dev. of balanced accuracy: 0.017871219316335344
+- Avg. f1_weighted: 0.28467799453444914
+- Std. Dev. of f1_weighted: 0.017417696059419466 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.27036335349758167
+- Std. Dev. of balanced accuracy: 0.01508989501837786
+- Avg. f1_weighted: 0.1797628321648223
+- Std. Dev. of f1_weighted: 0.016208640674969518 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3663595066387922
+- Std. Dev. of balanced accuracy: 0.018978663197085386
+- Avg. f1_weighted: 0.3408259511763897
+- Std. Dev. of f1_weighted: 0.02121815394670549 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8069970640787618
+- Std. Dev. of balanced accuracy: 0.022340318737306717
+- Avg. f1_weighted: 0.8084719068046391
+- Std. Dev. of f1_weighted: 0.022245498667014443 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7989920659401027
+- Std. Dev. of balanced accuracy: 0.02297432904332861
+- Avg. f1_weighted: 0.7998600611676892
+- Std. Dev. of f1_weighted: 0.021446380044601553 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.80105340481326
+- Std. Dev. of balanced accuracy: 0.01993194435661542
+- Avg. f1_weighted: 0.8043337466141345
+- Std. Dev. of f1_weighted: 0.01767291779207109 
+
+-- n_neighbours = 14 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3384085501021644
+- Std. Dev. of balanced accuracy: 0.017635846183216692
+- Avg. f1_weighted: 0.27779081750224177
+- Std. Dev. of f1_weighted: 0.01770649758978579 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.26327088939981824
+- Std. Dev. of balanced accuracy: 0.014515909698678988
+- Avg. f1_weighted: 0.17081051147711768
+- Std. Dev. of f1_weighted: 0.014891556614447764 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.35995944646670935
+- Std. Dev. of balanced accuracy: 0.014161932211583302
+- Avg. f1_weighted: 0.3356116862704019
+- Std. Dev. of f1_weighted: 0.01731148907338252 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8057156920469731
+- Std. Dev. of balanced accuracy: 0.02373293294683103
+- Avg. f1_weighted: 0.806975608853708
+- Std. Dev. of f1_weighted: 0.024193311638242163 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.798380274740109
+- Std. Dev. of balanced accuracy: 0.02301097731471828
+- Avg. f1_weighted: 0.7995597515043531
+- Std. Dev. of f1_weighted: 0.021459477347768915 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8039670873679899
+- Std. Dev. of balanced accuracy: 0.021124734072519157
+- Avg. f1_weighted: 0.8075146719235619
+- Std. Dev. of f1_weighted: 0.01932219116781693 
+
+-- n_neighbours = 15 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33493148192665495
+- Std. Dev. of balanced accuracy: 0.020475330697043218
+- Avg. f1_weighted: 0.2736597864895382
+- Std. Dev. of f1_weighted: 0.019548721725329316 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.26016604692983075
+- Std. Dev. of balanced accuracy: 0.01367714689821122
+- Avg. f1_weighted: 0.16594909815781625
+- Std. Dev. of f1_weighted: 0.01561029337438999 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.36113961115612153
+- Std. Dev. of balanced accuracy: 0.014486611333995404
+- Avg. f1_weighted: 0.336629654821324
+- Std. Dev. of f1_weighted: 0.01601753011089179 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.808910856855736
+- Std. Dev. of balanced accuracy: 0.020864728465436633
+- Avg. f1_weighted: 0.8105045082041593
+- Std. Dev. of f1_weighted: 0.021262257556696567 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7973904493859141
+- Std. Dev. of balanced accuracy: 0.021985165276497565
+- Avg. f1_weighted: 0.7986315318657369
+- Std. Dev. of f1_weighted: 0.02132666809377138 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8018553092132794
+- Std. Dev. of balanced accuracy: 0.018601287627576547
+- Avg. f1_weighted: 0.805692064860826
+- Std. Dev. of f1_weighted: 0.01593408210917517 
+
+-- n_neighbours = 16 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3300271721254175
+- Std. Dev. of balanced accuracy: 0.01898461966087423
+- Avg. f1_weighted: 0.2692571758460019
+- Std. Dev. of f1_weighted: 0.019061774944255167 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.25581727391576686
+- Std. Dev. of balanced accuracy: 0.011916736363592872
+- Avg. f1_weighted: 0.16099348146462517
+- Std. Dev. of f1_weighted: 0.01374215192295556 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.35732537423840216
+- Std. Dev. of balanced accuracy: 0.015037170609053609
+- Avg. f1_weighted: 0.3334278865557745
+- Std. Dev. of f1_weighted: 0.016481556557868867 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8076897534942772
+- Std. Dev. of balanced accuracy: 0.018572570946432214
+- Avg. f1_weighted: 0.8091842567298547
+- Std. Dev. of f1_weighted: 0.01934448491194084 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7978299009225378
+- Std. Dev. of balanced accuracy: 0.021701287165751634
+- Avg. f1_weighted: 0.7988064993294695
+- Std. Dev. of f1_weighted: 0.020653123526757307 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.803767963617464
+- Std. Dev. of balanced accuracy: 0.019461917728872548
+- Avg. f1_weighted: 0.8080370394419971
+- Std. Dev. of f1_weighted: 0.016598818005905062 
+
+-- n_neighbours = 17 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33122911380632447
+- Std. Dev. of balanced accuracy: 0.02052373571985796
+- Avg. f1_weighted: 0.2708744142234118
+- Std. Dev. of f1_weighted: 0.01964042200780628 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2519478840744371
+- Std. Dev. of balanced accuracy: 0.012407664131447872
+- Avg. f1_weighted: 0.15488545388853833
+- Std. Dev. of f1_weighted: 0.013305123096765367 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3540586423742123
+- Std. Dev. of balanced accuracy: 0.015236616217076632
+- Avg. f1_weighted: 0.32835866915778233
+- Std. Dev. of f1_weighted: 0.015262158715326454 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8054325676838502
+- Std. Dev. of balanced accuracy: 0.017265948939030256
+- Avg. f1_weighted: 0.8074908347495844
+- Std. Dev. of f1_weighted: 0.017026594787349393 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7955120195790235
+- Std. Dev. of balanced accuracy: 0.022853384132494263
+- Avg. f1_weighted: 0.7970710857362772
+- Std. Dev. of f1_weighted: 0.022416442845143214 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8031989074163125
+- Std. Dev. of balanced accuracy: 0.019937126110210677
+- Avg. f1_weighted: 0.8081298480787945
+- Std. Dev. of f1_weighted: 0.018794102602654274 
+
+-- n_neighbours = 18 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3263849972186804
+- Std. Dev. of balanced accuracy: 0.019543500548006243
+- Avg. f1_weighted: 0.2637132946448601
+- Std. Dev. of f1_weighted: 0.018278193108933923 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.24965836173767258
+- Std. Dev. of balanced accuracy: 0.011931643364399417
+- Avg. f1_weighted: 0.152249637095011
+- Std. Dev. of f1_weighted: 0.012608138799558553 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3521474372693289
+- Std. Dev. of balanced accuracy: 0.013904688820369798
+- Avg. f1_weighted: 0.3269995594036354
+- Std. Dev. of f1_weighted: 0.015568501243991199 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8085663524271995
+- Std. Dev. of balanced accuracy: 0.01893437532814506
+- Avg. f1_weighted: 0.8104795998869008
+- Std. Dev. of f1_weighted: 0.018452954403295897 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7946206501405939
+- Std. Dev. of balanced accuracy: 0.02376911292835099
+- Avg. f1_weighted: 0.7963846452940115
+- Std. Dev. of f1_weighted: 0.02258983983380882 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.799534751161915
+- Std. Dev. of balanced accuracy: 0.018864057634818465
+- Avg. f1_weighted: 0.8046134554601915
+- Std. Dev. of f1_weighted: 0.018216545002516165 
+
+-- n_neighbours = 19 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.32305787864542423
+- Std. Dev. of balanced accuracy: 0.020918044832591614
+- Avg. f1_weighted: 0.26167450425119426
+- Std. Dev. of f1_weighted: 0.01861937126827388 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.24566946290520414
+- Std. Dev. of balanced accuracy: 0.01208230101140951
+- Avg. f1_weighted: 0.14676488199748716
+- Std. Dev. of f1_weighted: 0.012709330587302215 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3462510173371293
+- Std. Dev. of balanced accuracy: 0.014108695222748909
+- Avg. f1_weighted: 0.3204944255885261
+- Std. Dev. of f1_weighted: 0.015804306477317877 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8063602090243469
+- Std. Dev. of balanced accuracy: 0.018575182157800303
+- Avg. f1_weighted: 0.8087137923209073
+- Std. Dev. of f1_weighted: 0.01819943275915803 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7943329820277948
+- Std. Dev. of balanced accuracy: 0.02522407444920813
+- Avg. f1_weighted: 0.795855921005734
+- Std. Dev. of f1_weighted: 0.02468303955415894 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7992230715046714
+- Std. Dev. of balanced accuracy: 0.02137861056798777
+- Avg. f1_weighted: 0.803760369162337
+- Std. Dev. of f1_weighted: 0.021177343272360385 
+
+-- n_neighbours = 20 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.32088044182512454
+- Std. Dev. of balanced accuracy: 0.018766609531161785
+- Avg. f1_weighted: 0.26057603109759264
+- Std. Dev. of f1_weighted: 0.018019286632041942 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2430553626207479
+- Std. Dev. of balanced accuracy: 0.012144386923516843
+- Avg. f1_weighted: 0.14379494108633992
+- Std. Dev. of f1_weighted: 0.011818161245187886 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.34275325999688755
+- Std. Dev. of balanced accuracy: 0.013232458466865257
+- Avg. f1_weighted: 0.31684154434734096
+- Std. Dev. of f1_weighted: 0.013827098685415368 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8070004111935736
+- Std. Dev. of balanced accuracy: 0.01828894769253351
+- Avg. f1_weighted: 0.8093214614822397
+- Std. Dev. of f1_weighted: 0.018313533223117063 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7944890039639464
+- Std. Dev. of balanced accuracy: 0.023831857829938116
+- Avg. f1_weighted: 0.7960496905342853
+- Std. Dev. of f1_weighted: 0.022929388682948398 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8030743822514781
+- Std. Dev. of balanced accuracy: 0.020322863230909247
+- Avg. f1_weighted: 0.8080943405491661
+- Std. Dev. of f1_weighted: 0.020366203094546998 
+
+-- n_neighbours = 21 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.31764803634279276
+- Std. Dev. of balanced accuracy: 0.01888329498176491
+- Avg. f1_weighted: 0.2567180631293419
+- Std. Dev. of f1_weighted: 0.016798085862284953 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2408813063882441
+- Std. Dev. of balanced accuracy: 0.012227617573153892
+- Avg. f1_weighted: 0.13992006657905315
+- Std. Dev. of f1_weighted: 0.011764207611915507 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.34253125476702423
+- Std. Dev. of balanced accuracy: 0.015166426241248912
+- Avg. f1_weighted: 0.31645777993155877
+- Std. Dev. of f1_weighted: 0.01823025832991453 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8070734025106578
+- Std. Dev. of balanced accuracy: 0.0173507229837841
+- Avg. f1_weighted: 0.8096992546568386
+- Std. Dev. of f1_weighted: 0.017086089424543042 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7951360841510449
+- Std. Dev. of balanced accuracy: 0.025375698014414826
+- Avg. f1_weighted: 0.7977712571592056
+- Std. Dev. of f1_weighted: 0.02320449752149267 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7994769036757544
+- Std. Dev. of balanced accuracy: 0.01908636349974463
+- Avg. f1_weighted: 0.8050766438248258
+- Std. Dev. of f1_weighted: 0.019994535407895128 
+
+-- n_neighbours = 22 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3154371613482175
+- Std. Dev. of balanced accuracy: 0.017315758965777337
+- Avg. f1_weighted: 0.25421288495372185
+- Std. Dev. of f1_weighted: 0.015740411161781327 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2388470424638073
+- Std. Dev. of balanced accuracy: 0.012510391867751302
+- Avg. f1_weighted: 0.13781223503393894
+- Std. Dev. of f1_weighted: 0.013067728525706182 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3422078000689418
+- Std. Dev. of balanced accuracy: 0.014044550199929761
+- Avg. f1_weighted: 0.31568719868797146
+- Std. Dev. of f1_weighted: 0.015654254625501178 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8071917275214464
+- Std. Dev. of balanced accuracy: 0.017871141003654247
+- Avg. f1_weighted: 0.8097265879435597
+- Std. Dev. of f1_weighted: 0.01794996129853685 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7969534888163511
+- Std. Dev. of balanced accuracy: 0.024457800499475376
+- Avg. f1_weighted: 0.7992804142990206
+- Std. Dev. of f1_weighted: 0.02344756288083406 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8019227797434609
+- Std. Dev. of balanced accuracy: 0.017801113077172744
+- Avg. f1_weighted: 0.8066517691734937
+- Std. Dev. of f1_weighted: 0.01900209242989338 
+
+-- n_neighbours = 23 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3138100161731676
+- Std. Dev. of balanced accuracy: 0.017916922419521267
+- Avg. f1_weighted: 0.2526633836772305
+- Std. Dev. of f1_weighted: 0.017701966685495122 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2373928686317201
+- Std. Dev. of balanced accuracy: 0.01130056991134461
+- Avg. f1_weighted: 0.135239347051309
+- Std. Dev. of f1_weighted: 0.010286290426201697 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.340095098349692
+- Std. Dev. of balanced accuracy: 0.01649067923570804
+- Avg. f1_weighted: 0.31297465643657646
+- Std. Dev. of f1_weighted: 0.017762442470264806 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8084494534139994
+- Std. Dev. of balanced accuracy: 0.015539883775635853
+- Avg. f1_weighted: 0.8110523736728409
+- Std. Dev. of f1_weighted: 0.01600350582522236 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7960793140306762
+- Std. Dev. of balanced accuracy: 0.024658814561674035
+- Avg. f1_weighted: 0.7986983269037438
+- Std. Dev. of f1_weighted: 0.023509220284174556 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8012247470561867
+- Std. Dev. of balanced accuracy: 0.015756672948351348
+- Avg. f1_weighted: 0.8066260565657153
+- Std. Dev. of f1_weighted: 0.016436708458808354 
+
+-- n_neighbours = 24 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3148716374350736
+- Std. Dev. of balanced accuracy: 0.018952350356925118
+- Avg. f1_weighted: 0.25329366017231497
+- Std. Dev. of f1_weighted: 0.01752546819918331 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2369662718220463
+- Std. Dev. of balanced accuracy: 0.011472410314200543
+- Avg. f1_weighted: 0.1345181125174983
+- Std. Dev. of f1_weighted: 0.01028360516135811 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33765826655032066
+- Std. Dev. of balanced accuracy: 0.01610196044762595
+- Avg. f1_weighted: 0.3091916138165136
+- Std. Dev. of f1_weighted: 0.01950802200607886 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8060705670790276
+- Std. Dev. of balanced accuracy: 0.019962656844454803
+- Avg. f1_weighted: 0.8091093340420967
+- Std. Dev. of f1_weighted: 0.01957530501278411 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7968023117410611
+- Std. Dev. of balanced accuracy: 0.023891713956188207
+- Avg. f1_weighted: 0.799254525751764
+- Std. Dev. of f1_weighted: 0.023165031625661546 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8024710459484854
+- Std. Dev. of balanced accuracy: 0.01629001212845849
+- Avg. f1_weighted: 0.8080738770044384
+- Std. Dev. of f1_weighted: 0.01779057041128422 
+
+-- n_neighbours = 25 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3131896047021955
+- Std. Dev. of balanced accuracy: 0.01649043579313721
+- Avg. f1_weighted: 0.252227404042422
+- Std. Dev. of f1_weighted: 0.01613524857922015 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.23573627569473987
+- Std. Dev. of balanced accuracy: 0.011007014576469454
+- Avg. f1_weighted: 0.13268654746289804
+- Std. Dev. of f1_weighted: 0.009748444255749807 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33795731323185296
+- Std. Dev. of balanced accuracy: 0.015855651531564215
+- Avg. f1_weighted: 0.3111418978187813
+- Std. Dev. of f1_weighted: 0.01835128460150254 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8065998968493598
+- Std. Dev. of balanced accuracy: 0.018993123721947627
+- Avg. f1_weighted: 0.8100316864172905
+- Std. Dev. of f1_weighted: 0.01882462129869242 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.79572442431813
+- Std. Dev. of balanced accuracy: 0.024968632946636735
+- Avg. f1_weighted: 0.7981915392242958
+- Std. Dev. of f1_weighted: 0.024171615735789412 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7995858577781195
+- Std. Dev. of balanced accuracy: 0.017865029104239195
+- Avg. f1_weighted: 0.8056604253558183
+- Std. Dev. of f1_weighted: 0.017886113151784778 
+
+-- n_neighbours = 26 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.31208033202862906
+- Std. Dev. of balanced accuracy: 0.01778604019765316
+- Avg. f1_weighted: 0.24996079668656973
+- Std. Dev. of f1_weighted: 0.016972082858039868 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.23512828270323055
+- Std. Dev. of balanced accuracy: 0.011840068234899862
+- Avg. f1_weighted: 0.1315679285632803
+- Std. Dev. of f1_weighted: 0.011028329384122227 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33364153057934903
+- Std. Dev. of balanced accuracy: 0.016383721054178055
+- Avg. f1_weighted: 0.3061715045326134
+- Std. Dev. of f1_weighted: 0.018291323529749826 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8063084878487656
+- Std. Dev. of balanced accuracy: 0.021079745416340917
+- Avg. f1_weighted: 0.809667795756609
+- Std. Dev. of f1_weighted: 0.019592942890828757 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7975730771851148
+- Std. Dev. of balanced accuracy: 0.02462325440638416
+- Avg. f1_weighted: 0.7996532367886451
+- Std. Dev. of f1_weighted: 0.023081099425900375 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8009433309078332
+- Std. Dev. of balanced accuracy: 0.017137412004379536
+- Avg. f1_weighted: 0.8068406158658528
+- Std. Dev. of f1_weighted: 0.01729210933791404 
+
+-- n_neighbours = 27 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3109808098846491
+- Std. Dev. of balanced accuracy: 0.017908113685693474
+- Avg. f1_weighted: 0.2486610134006441
+- Std. Dev. of f1_weighted: 0.015357389695665583 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.23288877488850482
+- Std. Dev. of balanced accuracy: 0.010858551459564164
+- Avg. f1_weighted: 0.12908396172752543
+- Std. Dev. of f1_weighted: 0.011459294418670576 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33249469695832534
+- Std. Dev. of balanced accuracy: 0.016155105712929937
+- Avg. f1_weighted: 0.3050848791757964
+- Std. Dev. of f1_weighted: 0.017811690293807483 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8074156622329142
+- Std. Dev. of balanced accuracy: 0.021955933250481348
+- Avg. f1_weighted: 0.8110815156528629
+- Std. Dev. of f1_weighted: 0.02055269074540036 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7970410970454924
+- Std. Dev. of balanced accuracy: 0.02555354761408096
+- Avg. f1_weighted: 0.7993344947527012
+- Std. Dev. of f1_weighted: 0.023850370091216832 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7997629716081233
+- Std. Dev. of balanced accuracy: 0.01923681555972023
+- Avg. f1_weighted: 0.8065992428349699
+- Std. Dev. of f1_weighted: 0.01861061753403103 
+
+-- n_neighbours = 28 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.31115104229084667
+- Std. Dev. of balanced accuracy: 0.017978016004321088
+- Avg. f1_weighted: 0.2500600421968847
+- Std. Dev. of f1_weighted: 0.016185543169868966 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.23192175965976367
+- Std. Dev. of balanced accuracy: 0.010103353550375536
+- Avg. f1_weighted: 0.12840307405947987
+- Std. Dev. of f1_weighted: 0.00970885172097021 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3307274975444603
+- Std. Dev. of balanced accuracy: 0.016213969568923525
+- Avg. f1_weighted: 0.30181924245460695
+- Std. Dev. of f1_weighted: 0.01816387925139785 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.80359276917711
+- Std. Dev. of balanced accuracy: 0.021817343544671432
+- Avg. f1_weighted: 0.8079111966245831
+- Std. Dev. of f1_weighted: 0.021011389446399947 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7960212568641223
+- Std. Dev. of balanced accuracy: 0.024179471296135933
+- Avg. f1_weighted: 0.7985948148678187
+- Std. Dev. of f1_weighted: 0.022882254509985156 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8002387981239002
+- Std. Dev. of balanced accuracy: 0.021498294694524946
+- Avg. f1_weighted: 0.8061743345331933
+- Std. Dev. of f1_weighted: 0.020693767571262463 
+
+-- n_neighbours = 29 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3107673816857034
+- Std. Dev. of balanced accuracy: 0.01798880798862861
+- Avg. f1_weighted: 0.24872359616582
+- Std. Dev. of f1_weighted: 0.01744095329027009 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2307217326013554
+- Std. Dev. of balanced accuracy: 0.010085952897675532
+- Avg. f1_weighted: 0.1261537491467785
+- Std. Dev. of f1_weighted: 0.009855375071896216 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.33283625183720494
+- Std. Dev. of balanced accuracy: 0.014420459791119535
+- Avg. f1_weighted: 0.30459658764370084
+- Std. Dev. of f1_weighted: 0.015116805604268431 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8036599211256397
+- Std. Dev. of balanced accuracy: 0.021921329532816506
+- Avg. f1_weighted: 0.8083931284759176
+- Std. Dev. of f1_weighted: 0.020376313832525087 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7946332059609607
+- Std. Dev. of balanced accuracy: 0.024608195806784364
+- Avg. f1_weighted: 0.7979681463309367
+- Std. Dev. of f1_weighted: 0.023477930894725642 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8004161089778851
+- Std. Dev. of balanced accuracy: 0.01863629129483307
+- Avg. f1_weighted: 0.8060100199553911
+- Std. Dev. of f1_weighted: 0.0178099427419443 
+
+-- n_neighbours = 30 --
+--- Cross Val. of KNN CV with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.30942347826518035
+- Std. Dev. of balanced accuracy: 0.017158876204946806
+- Avg. f1_weighted: 0.24765030645152813
+- Std. Dev. of f1_weighted: 0.01636307292919679 
+
+--- Cross Val. of KNN CV with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.2310505984278935
+- Std. Dev. of balanced accuracy: 0.009447219197724906
+- Avg. f1_weighted: 0.12624858112351128
+- Std. Dev. of f1_weighted: 0.0091316544239858 
+
+--- Cross Val. of KNN CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.3289291366220959
+- Std. Dev. of balanced accuracy: 0.01718369768309271
+- Avg. f1_weighted: 0.29865490722582005
+- Std. Dev. of f1_weighted: 0.0165867298969999 
+
+--- Cross Val. of KNN tf-idf with lowercasing -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.804590325663556
+- Std. Dev. of balanced accuracy: 0.021922237453077704
+- Avg. f1_weighted: 0.8090283281844354
+- Std. Dev. of f1_weighted: 0.019864969797394074 
+
+--- Cross Val. of KNN tf-idf with lowercasing and sw_removal -- 
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7944160734635484
+- Std. Dev. of balanced accuracy: 0.025958535921261554
+- Avg. f1_weighted: 0.7973622060614025
+- Std. Dev. of f1_weighted: 0.0245655248657705 
+
+--- Cross Val. of KNN tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7993086844950711
+- Std. Dev. of balanced accuracy: 0.019827852682417005
+- Avg. f1_weighted: 0.805208147965043
+- Std. Dev. of f1_weighted: 0.017951882987857066 
+

@@ -1,0 +1,13 @@
+Balanced Accuracy:
+    LSVM tf-idf w/ lowercasing:             0.8496
+    NB CV w/ lowercasing and sw_removal:    0.8415
+    LR CV w/ lowercasing:                   0.8301
+    Perceptron CV w/ lowecasing:            0.8171
+    KNN (N = 15) tf-idf w/ lowercasing:     0.8089
+
+f1_weighted:
+    LSVM tf-idf w/ lowercasing:             0.8561
+    NB CV w/ lowercasing:                   0.8498
+    LR CV w/ lowercasing:                   0.8359
+    Perceptron tf-idf w/ lowercasing:       0.8209
+    KNN (N = 27) tf-idf w/ lowercasing:     0.8111

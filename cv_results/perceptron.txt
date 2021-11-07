@@ -1,0 +1,56 @@
+---- Perceptron ----
+
+--- Cross Val. of Perceptron CV with lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8171239280238449
+- Std. Dev. of balanced accuracy: 0.017929427112131385
+- Avg. f1_weighted: 0.8209264996021612
+- Std. Dev. of f1_weighted: 0.015448263016159001 
+
+--- Cross Val. of Perceptron CV with lowercasing and sw_removal --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.7987676110655961
+- Std. Dev. of balanced accuracy: 0.020290939464835064
+- Avg. f1_weighted: 0.8026327481950937
+- Std. Dev. of f1_weighted: 0.018867758732322406 
+
+--- Cross Val. of Perceptron CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8153268437983842
+- Std. Dev. of balanced accuracy: 0.019881513365134367
+- Avg. f1_weighted: 0.8201039326628186
+- Std. Dev. of f1_weighted: 0.016327826562928263 
+
+--- Cross Val. of Perceptron tf-idf with lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8153850798913606
+- Std. Dev. of balanced accuracy: 0.02226272838864177
+- Avg. f1_weighted: 0.8209308906680931
+- Std. Dev. of f1_weighted: 0.021182333688356376 
+
+--- Cross Val. of Perceptron tf-idf with lowercasing and sw_removal --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8088699562614803
+- Std. Dev. of balanced accuracy: 0.015473505746886282
+- Avg. f1_weighted: 0.8133880378240914
+- Std. Dev. of f1_weighted: 0.014305753699009978 
+
+--- Cross Val. of Perceptron tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.814675062029408
+- Std. Dev. of balanced accuracy: 0.02372664484091902
+- Avg. f1_weighted: 0.8193221740471716
+- Std. Dev. of f1_weighted: 0.020168152853541527 
+

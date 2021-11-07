@@ -1,0 +1,55 @@
+---- LogisticRegression ----
+
+--- Cross Val. of LogisticRegression CV with lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8300994185342961
+- Std. Dev. of balanced accuracy: 0.01969405564213852
+- Avg. f1_weighted: 0.835901607522654
+- Std. Dev. of f1_weighted: 0.017534876312636095 
+
+--- Cross Val. of LogisticRegression CV with lowercasing and sw_removal --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8230251702498343
+- Std. Dev. of balanced accuracy: 0.01867568344796635
+- Avg. f1_weighted: 0.8311070747894185
+- Std. Dev. of f1_weighted: 0.016807084848002096 
+
+--- Cross Val. of LogisticRegression CV with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8296185229396716
+- Std. Dev. of balanced accuracy: 0.021942741949661556
+- Avg. f1_weighted: 0.8352284794419251
+- Std. Dev. of f1_weighted: 0.019755284255245382 
+
+--- Cross Val. of LogisticRegression tf-idf with lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8092793969610179
+- Std. Dev. of balanced accuracy: 0.019177441580093782
+- Avg. f1_weighted: 0.8264024137762244
+- Std. Dev. of f1_weighted: 0.01743963971415122 
+
+--- Cross Val. of LogisticRegression tf-idf with lowercasing and sw_removal --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8104980967016356
+- Std. Dev. of balanced accuracy: 0.01911415583791722
+- Avg. f1_weighted: 0.8308339085326093
+- Std. Dev. of f1_weighted: 0.015562446428873134 
+
+--- Cross Val. of LogisticRegression tf-idf with lemmatization, sw_removal removal, lowercasing --
+-- Beginning cross val. with 20 folds --
+
+-- Results --
+- Avg. balanced accuracy: 0.8186089335779909
+- Std. Dev. of balanced accuracy: 0.02275847041583744
+- Avg. f1_weighted: 0.8329358240303572
+- Std. Dev. of f1_weighted: 0.019480591243024578 
