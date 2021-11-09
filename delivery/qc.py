@@ -16,7 +16,7 @@ def run_model(training_set: pd.DataFrame, test_set: pd.DataFrame):
         return corpus
 
     corpus_train = get_corpus(training_set)
-    vectorizer = TfidfVectorizer()
+    vectorizer = TfidfVectorizer(tokenizer=LemmaTokenizer())
     X_train = vectorizer.fit_transform(corpus_train)
     y_train = training_set[LBL_COL]
 
